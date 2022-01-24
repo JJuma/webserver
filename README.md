@@ -10,11 +10,10 @@ In the url_rewrite.ini file you can add a rewrite rule.
 Currently there are 2 rules post and article written in the form:
 <name> = <url regex> <result>
 eg In for article the rule is as shown below:
-  ^article/([^/.]+)/([^/.]+)$ article?id=$1&title=$2
-  for url input http://localhost:8000/article/12/code
-  will be rewritten to http://localhost:8000/article?id=12&title=code
+^article/([^/.]+)/([^/.]+)$ article?id=$1&title=$2
+for url input http://localhost:8000/article/12/code will be rewritten to http://localhost:8000/article?id=12&title=code
   
-    First the ^(caret) starts the expression.
-    article: If anything besides "article" is typed in, the URL rewrite will not take place.
-    The ([^/.]+) indicates that anything can be written between the forward slash besides the characters following the caret, in this case, the forward slash or period.
-    article?id=$1&title=$2: Each value in the parentheses will be extracted and then applied to the longer URL in the substitution part of the expression. $1 indicates the first       parantheses, $2, the second. 
+First the ^(caret) starts the expression.
+article: If anything besides "article" is typed in, the URL rewrite will not take place.
+([^/.]+): indicates that anything can be written between the forward slash besides the characters following the caret, in this case, the forward slash or period. 
+article?id=$1&title=$2: Each value in the parentheses will be extracted and then applied to the longer URL in the substitution part of the expression. $1 indicates the first       parantheses, $2, the second. 

@@ -14,8 +14,9 @@ e.g.
 >In the provided rules we have articles rule as shown below:<br />
 >^article/([^/.]+)/([^/.]+)$ article?id=$1&title=$2<br />
 In which url input http://localhost:8000/article/12/code will be rewritten to http://localhost:8000/article?id=12&title=code<br />
-  
-First the ^(caret) starts the expression.<br />
-* article: If anything besides "article" is typed in, the URL rewrite will not take place.
-* ([^/.]+): indicates that anything can be written between the forward slash besides the characters following the caret, in this case, the forward slash or period. 
-* article?id=$1&title=$2: Each value in the parentheses will be extracted and then applied to the longer URL in the substitution part of the expression. $1 indicates the first       parantheses, $2, the second.
+
+In the article rule:
+* ^(caret):  starts the expression.<br />
+* article:  if anything besides "article" is typed in, the URL rewrite will not take place.
+* ([^/.]+):  indicates that anything can be written between the forward slash besides the characters following the caret, in this case, the forward slash or period. 
+* article?id=$1&title=$2: Each value in the parentheses above will be extracted and then applied to the longer URL in the substitution part of the expression. $1 indicates the first parantheses, $2, the second.

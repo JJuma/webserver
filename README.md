@@ -6,13 +6,14 @@ Basic HTTP web-server application which can listen on a configurable TCP port an
 * You can add custom html pages in the templates folder and view them using the same process.
 
 ## URL rewriting
-URL rewriting feature such as mod_rewrite in Apache. Is also included.<br />
+URL rewriting feature such as mod_rewrite in Apache is also included.<br />
 In the url_rewrite.ini file you can add a rewrite rule.<br />
 Currently there are 2 rules post and article written in the form:
 <name> = <url regex> <result><br />
-eg In for article the rule is as shown below:<br />
-^article/([^/.]+)/([^/.]+)$ article?id=$1&title=$2<br />
-for url input http://localhost:8000/article/12/code will be rewritten to http://localhost:8000/article?id=12&title=code<br />
+e.g. 
+>In the provided rules we have articles rule as shown below:<br />
+>^article/([^/.]+)/([^/.]+)$ article?id=$1&title=$2<br />
+In which url input http://localhost:8000/article/12/code will be rewritten to http://localhost:8000/article?id=12&title=code<br />
   
 First the ^(caret) starts the expression.<br />
 * article: If anything besides "article" is typed in, the URL rewrite will not take place.
